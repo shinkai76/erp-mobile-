@@ -1,0 +1,85 @@
+@charset "UTF-8";
+// 存放基础样式
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 625%;
+}
+
+body {
+  font-size: 0.16rem;
+  background-color: #fff;
+  line-height: 1.5;
+  font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+body, ul, ol, li, p, form, fieldset, table, td, img, div {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+select, input, img, select {
+  vertical-align: middle;
+}
+
+.clearfix:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+@media screen and (min-width: 360px) and (max-width: 374px) and (orientation: portrait) {
+  html {
+    font-size: 703%;
+  }
+
+  @media screen and (min-width: 375px) and (max-width: 383px) and (orientation: portrait) {
+    html {
+      font-size: 732.4%;
+    }
+  }
+  @media screen and (min-width: 384px) and (max-width: 399px) and (orientation: portrait) {
+    html {
+      font-size: 750%;
+    }
+  }
+  @media screen and (min-width: 400px) and (max-width: 413px) and (orientation: portrait) {
+    html {
+      font-size: 781.25%;
+    }
+  }
+  @media screen and (min-width: 414px) and (max-width: 431px) and (orientation: portrait) {
+    html {
+      font-size: 808.6%;
+    }
+  }
+  @media screen and (min-width: 432px) and (max-width: 479px) and (orientation: portrait) {
+    html {
+      font-size: 843.75%;
+    }
+  }
+}
