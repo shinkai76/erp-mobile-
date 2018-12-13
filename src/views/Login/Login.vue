@@ -1,0 +1,72 @@
+<template>
+  <div id="Login">
+    <div class="login-wrap">
+      <input type="text" placeholder="用户名" name="user_name" class="login-input" v-model.trim="loginForm.user_name">
+      <input type="password" placeholder="密码" name="password" class="login-input" v-model="loginForm.password">
+      <input type="text" placeholder="企业ID" name="set_of_book" class="login-input" v-model.trim="loginForm.set_of_book">
+      <button type="submit" class="login-submit" @click="handleLogin()">登录</button>
+    </div>
+  </div>
+</template>
+
+<script>
+  import { setToken } from '@/utils/auth'
+
+  export default {
+    name: 'Login',
+    data () {
+      return {
+        loginForm: {
+          user_name: '',
+          password: '',
+          set_of_book: ''
+        }
+      }
+    },
+    // created() {}, // 获取数据
+    mounted () {
+    }, // 请求数据之后的页面其他逻辑,
+    activated () {},
+    deactivated () {},
+    methods: {
+      handleLogin () {
+        this.$axios({
+          url: '/api/login',
+          method: 'POST',
+          params: this.loginForm
+        }).then(res => {
+          setToken(res.data.token)
+        }).catch(err => {
+          console.log(err)
+        })
+      }
+    }
+  }
+</script>
+
+<style scoped lang="less">
+  .login-wrap {
+    height: 70vh;
+    position: relative;
+    width: 40%;
+    min-width: 300px;
+    margin: 15vh auto;
+
+    .login-input {
+      border: 1px solid #ccc;
+      width: 100%;
+      padding: 0.1rem;
+      margin: 0.1rem 0;
+    }
+
+    .login-submit {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ccc;
+      padding: 0.1rem;
+
+    }
+  }
+</style>
