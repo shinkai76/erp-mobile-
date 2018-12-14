@@ -45,28 +45,30 @@
 </script>
 
 <style scoped lang="less">
-  .login-wrap {
-    height: 70vh;
-    position: relative;
-    width: 40%;
-    min-width: 300px;
-    margin: 15vh auto;
+  #Login {
+    height: 100%;
+    .login-wrap {
+      position: relative;
+      width: 40%;
+      min-width: 270px;
+      margin: 0 auto;
+      padding-top: 15vh;
 
-    .login-input {
-      border: 1px solid #ccc;
-      width: 100%;
-      padding: 0.1rem;
-      margin: 0.1rem 0;
-    }
+      .login-input {
+        border: 1px solid #ccc;
+        width: 100%;
+        padding: 0.1rem;
+        margin: 0.1rem 0;
+      }
 
-    .login-submit {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #ccc;
-      padding: 0.1rem;
+      .login-submit {
+        margin-top: 45vh;
+        width: 100%;
+        background-color: #ccc;
+        padding: 0.1rem;
 
+      }
     }
   }
+
 </style>
