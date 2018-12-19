@@ -14,18 +14,23 @@ const store = new Vuex.Store({
   },
   getters,
   state: {
-    sidebar: {
-      opened: !+Cookies.get('sidebarStatus')
+    sidemenu: {
+      opened: !+Cookies.get('sidemenuStatus')
     },
   },
   mutations: {
     TOGGLE_SIDEMENU: state => {
-      if (state.sidebar.opened) {
-        Cookies.set('sidebarStatus', 1)
+      if (state.sidemenu.opened) {
+        Cookies.set('sidemenuStatus', 1)
       } else {
-        Cookies.set('sidebarStatus', 0)
+        Cookies.set('sidemenuStatus', 0)
       }
-      state.sidebar.opened = !state.sidebar.opened
+      state.sidemenu.opened = !state.sidemenu.opened
+      console.log(state.sidemenu.opened)
+    },
+    CLOSE_SIDEMENU: state => {
+      Cookies.set('sidemenuStatus', 1)
+      state.sidemenu.opened = false
     }
   }
 })

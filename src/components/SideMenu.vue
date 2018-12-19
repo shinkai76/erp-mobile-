@@ -1,5 +1,5 @@
 <template>
-  <div id="SideMenu" v-show="$store.state.sidebar.opened">
+  <div id="SideMenu">
     <div class="side-menu-wrap">
       <div class="side-menu-user">
         <h4>用户名</h4>
@@ -70,13 +70,10 @@
         ]
       }
     },
-    created() {
-      this.$store.state.showSideMenu = false
-    },
     mounted () {
       document.addEventListener('click', (e) => {
           if (!this.$el.contains(e.target))
-            this.$store.state.sidebar.opened = false
+            this.$store.commit('CLOSE_SIDEMENU')
         }
       )
     }

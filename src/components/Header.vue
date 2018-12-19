@@ -22,7 +22,6 @@
   height: 6vh;
   width: 100%;
   top:0;
-  position: fixed;
   background-color: #ccc;
   font-size: 0.4rem;
   line-height: 6vh;

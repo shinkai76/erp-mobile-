@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from 'views/Login/Login.vue'
 
 Vue.use(Router)
 
@@ -8,8 +7,17 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect: '/login'
+    },
+    {
+      path: '/login',
       name: 'login',
-      component: Login
+      component: () => import(/* webpackChunkName: "about" */ 'views/login/index.vue')
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import(/* webpackChunkName: "about" */ 'views/dashboard/index.vue')
     },
     {
       path: '/about',

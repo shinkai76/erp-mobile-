@@ -36,6 +36,7 @@
           params: this.loginForm
         }).then(res => {
           setToken(res.data.token)
+          this.$router.push('dashboard')
         }).catch(err => {
           console.log(err)
         })

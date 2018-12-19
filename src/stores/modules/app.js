@@ -2,37 +2,37 @@ import Cookies from 'js-cookie'
 
 const app = {
   state: {
-    sidebar: {
-      opened: !+Cookies.get('sidebarStatus'),
+    sidemenu: {
+      opened: !+Cookies.get('sidemenuStatus'),
       withoutAnimation: false
     },
     device: 'desktop'
   },
   mutations: {
-    TOGGLE_SIDEBAR: state => {
-      if (state.sidebar.opened) {
-        Cookies.set('sidebarStatus', 1)
+    TOGGLE_sidemenu: state => {
+      if (state.sidemenu.opened) {
+        Cookies.set('sidemenuStatus', 1)
       } else {
-        Cookies.set('sidebarStatus', 0)
+        Cookies.set('sidemenuStatus', 0)
       }
-      state.sidebar.opened = !state.sidebar.opened
-      state.sidebar.withoutAnimation = false
+      state.sidemenu.opened = !state.sidemenu.opened
+      state.sidemenu.withoutAnimation = false
     },
-    CLOSE_SIDEBAR: (state, withoutAnimation) => {
-      Cookies.set('sidebarStatus', 1)
-      state.sidebar.opened = false
-      state.sidebar.withoutAnimation = withoutAnimation
+    CLOSE_sidemenu: (state, withoutAnimation) => {
+      Cookies.set('sidemenuStatus', 1)
+      state.sidemenu.opened = false
+      state.sidemenu.withoutAnimation = withoutAnimation
     },
     TOGGLE_DEVICE: (state, device) => {
       state.device = device
     }
   },
   actions: {
-    ToggleSideBar: ({ commit }) => {
-      commit('TOGGLE_SIDEBAR')
+    Togglesidemenu: ({ commit }) => {
+      commit('TOGGLE_sidemenu')
     },
-    CloseSideBar ({ commit }, { withoutAnimation }) {
-      commit('CLOSE_SIDEBAR', withoutAnimation)
+    Closesidemenu ({ commit }, { withoutAnimation }) {
+      commit('CLOSE_sidemenu', withoutAnimation)
     },
     ToggleDevice ({ commit }, device) {
       commit('TOGGLE_DEVICE', device)
