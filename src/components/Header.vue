@@ -11,7 +11,8 @@
     name: 'Header',
     methods: {
       onOpenSideMenu() {
-        this.$store.commit('TOGGLE_SIDEMENU')
+        debugger
+        this.$store.dispatch('ToggleSideMenu')
       }
     }
   }

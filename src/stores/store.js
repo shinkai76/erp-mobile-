@@ -1,18 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import app from './modules/app'
-import user from './modules/user'
-import getters from './getters'
+// import app from './modules/app'
+// import user from './modules/user'
+// import getters from './getters'
 import Cookies from 'js-cookie'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   modules: {
-    app,
-    user
+    // app,
+    // user
   },
-  getters,
+  // getters,
   state: {
     sidemenu: {
       opened: !+Cookies.get('sidemenuStatus')
@@ -31,6 +31,14 @@ const store = new Vuex.Store({
     CLOSE_SIDEMENU: state => {
       Cookies.set('sidemenuStatus', 1)
       state.sidemenu.opened = false
+    }
+  },
+  actions: {
+    ToggleSideMenu: ({ commit }) => {
+      commit('TOGGLE_SIDEMENU')
+    },
+    CloseSideMenu({ commit }) {
+      commit('CLOSE_SIDEMENU')
     }
   }
 })

@@ -69,13 +69,6 @@
           }
         ]
       }
-    },
-    mounted () {
-      document.addEventListener('click', (e) => {
-          if (!this.$el.contains(e.target))
-            this.$store.commit('CLOSE_SIDEMENU')
-        }
-      )
     }
   }
 </script>
