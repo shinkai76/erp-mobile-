@@ -26,7 +26,6 @@ const store = new Vuex.Store({
         Cookies.set('sidemenuStatus', 0)
       }
       state.sidemenu.opened = !state.sidemenu.opened
-      console.log(state.sidemenu.opened)
     },
     CLOSE_SIDEMENU: state => {
       Cookies.set('sidemenuStatus', 1)

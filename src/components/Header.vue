@@ -11,7 +11,6 @@
     name: 'Header',
     methods: {
       onOpenSideMenu() {
-        debugger
         this.$store.dispatch('ToggleSideMenu')
       }
     }

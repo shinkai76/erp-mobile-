@@ -1,6 +1,6 @@
 <template>
-  <div id="SideMenu">
-    <div class="side-menu-wrap">
+  <div id="SideMenu"   @click="hidePanel">
+    <div class="side-menu-wrap" id="myPanel">
       <div class="side-menu-user">
         <h4>用户名</h4>
         <h4>账套号</h4>
@@ -69,22 +69,35 @@
           }
         ]
       }
+    },
+    methods: {
+      hidePanel: function (event) {
+        var sp = document.getElementById('myPanel')
+        if (sp) {
+          if (!sp.contains(event.target)) { // 点击右侧的空白区域隐藏sideMenu
+            this.$store.dispatch("CloseSideMenu")
+          }
+        }
+      }
     }
   }
 </script>
 
 <style scoped lang="less">
   #SideMenu {
-    height: 100%;
-    position: fixed;
-    left: 0;
+    position: absolute;
     top: 0;
-    width: 70vw;
-    background-color: #fff;
-    z-index: 5000;
-    box-shadow: 1px 0 7px 4px #ccc;
+    width: 100%;
+    height: 100%;
 
     .side-menu {
+      &-wrap {
+        width: 70vw;
+        background-color: #fff;
+        box-shadow: 1px 0 7px 4px #ccc;
+        height: 100vh;
+      }
+
       &-user {
         height: 30%;
         text-align: center;
@@ -92,8 +105,6 @@
       }
 
       &-menu {
-        padding-top: 20%;
-
         ul {
           padding-left: 10%;
         }
@@ -102,13 +113,6 @@
           padding: 0.1rem 0;
           font-size: 0.3rem;
         }
-
-        &menu_default {
-
-        }
-
-        height: 60%;
-
       }
     }
   }
