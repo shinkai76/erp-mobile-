@@ -20,6 +20,11 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ 'views/dashboard/index.vue')
     },
     {
+      path: '/workspace',
+      name: 'workspace',
+      component: () => import(/* webpackChunkName: "about" */ 'views/workspace/index.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting

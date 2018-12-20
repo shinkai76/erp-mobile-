@@ -4,7 +4,7 @@
       <input type="text" placeholder="用户名" name="user_name" class="login-input" v-model.trim="loginForm.user_name">
       <input type="password" placeholder="密码" name="password" class="login-input" v-model="loginForm.password">
       <input type="text" placeholder="企业ID" name="set_of_book" class="login-input" v-model.trim="loginForm.set_of_book">
-      <button type="submit" class="login-submit" @click="handleLogin()">登录</button>
+      <button type="submit" class="login-submit" @enter="handleLogin()" @click="handleLogin()">登录</button>
     </div>
   </div>
 </template>
@@ -36,6 +36,8 @@
           params: this.loginForm
         }).then(res => {
           setToken(res.data.token)
+          this.$store.state.userName = this.loginForm.user_name
+          this.$store.state.setOfBook = this.loginForm.set_of_book
           this.$router.push('dashboard')
         }).catch(err => {
           console.log(err)

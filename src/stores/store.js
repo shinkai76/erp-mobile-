@@ -14,6 +14,8 @@ const store = new Vuex.Store({
   },
   // getters,
   state: {
+    userName: "",
+    setOfBook: "",
     sidemenu: {
       opened: !+Cookies.get('sidemenuStatus')
     },
