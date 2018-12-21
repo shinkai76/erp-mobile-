@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 // import app from './modules/app'
 // import user from './modules/user'
 // import getters from './getters'
+import { getToken, setToken, removeToken } from '@/utils/auth'
 import Cookies from 'js-cookie'
 
 Vue.use(Vuex)
@@ -35,10 +36,14 @@ const store = new Vuex.Store({
     }
   },
   actions: {
-    ToggleSideMenu: ({ commit }) => {
+    ToggleSideMenu({ commit }){
       commit('TOGGLE_SIDEMENU')
     },
     CloseSideMenu({ commit }) {
+      commit('CLOSE_SIDEMENU')
+    },
+    ClearLogInfo({ commit }) {
+      removeToken()
       commit('CLOSE_SIDEMENU')
     }
   }

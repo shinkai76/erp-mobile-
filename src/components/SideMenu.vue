@@ -7,14 +7,14 @@
       </div>
       <div class="side-menu-menu">
         <ul class="parent-ul">
-          <li v-for="(value, index, key) in items" :class="value.className" @click="toViews(value)">{{ value.text }}
+          <li v-for="(value, index, key) in items" :class="value.className" @enter="toViews(value)" @click="toViews(value)">{{ value.text }}
             <ul v-if="value.childList" class="child—ul">
               <li v-for="child in value.childList">{{ child.text }}</li>
             </ul>
           </li>
         </ul>
       </div>
-      <button type="button" @click="layout">登出</button>
+      <button type="button" @click="logout">登出</button>
     </div>
   </div>
 </template>
@@ -87,10 +87,9 @@
           }
         }
       },
-      layout() {
-        removeToken()
-        this.$store.dispatch("CloseSideMenu")
-        this.$router.replace('login')
+      logout() {
+        this.$store.dispatch("ClearLogInfo")
+        this.$router.replace('/login')
       }
     }
   }

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import { setToken } from '@/utils/auth'
+  import { setToken, removeToken } from '@/utils/auth'
 
   export default {
     name: 'Login',
@@ -25,6 +25,7 @@
     },
     // created() {}, // 获取数据
     mounted () {
+      removeToken()
     }, // 请求数据之后的页面其他逻辑,
     activated () {},
     deactivated () {},
@@ -38,7 +39,7 @@
           setToken(res.data.token)
           this.$store.state.userName = this.loginForm.user_name
           this.$store.state.setOfBook = this.loginForm.set_of_book
-          this.$router.push('dashboard')
+          this.$router.replace('/dashboard')
         }).catch(err => {
           console.log(err)
         })

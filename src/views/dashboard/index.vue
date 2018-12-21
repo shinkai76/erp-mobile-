@@ -1,7 +1,6 @@
 <template>
   <div id="dashboard">
     <c-header></c-header>
-    <c-sidemenu  v-show="sidemenu.opened"></c-sidemenu>
     <section id="infos" class="infos-wrap">
         <i class="fa fa-bell-o infos-ico infos-ico_left" aria-hidden="true"></i>
         <span class="infos-title">消息通知</span>
@@ -38,20 +37,14 @@
 
 <script>
   import Header from '@/components/Header.vue'
-  import SideMenu from '@/components/SideMenu.vue'
   import IcoSlot from '@/components/IcoSlot.vue'
 
   export default {
     name: 'Dashboard',
     components: {
       'c-header' : Header,
-      'c-sidemenu' : SideMenu,
+      // 'c-sidemenu' : SideMenu,
       'c-icoslot' : IcoSlot
-    },
-    computed: {
-      sidemenu() {
-        return this.$store.state.sidemenu
-      }
     }
   }
 </script>

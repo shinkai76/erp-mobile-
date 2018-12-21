@@ -1,8 +1,8 @@
 <template>
     <div id="workspace">
-
+      <c-header></c-header>
         <div>
-          过滤按钮
+          <button type="button">过滤</button>
           共多少条记录
         </div>
     </div>
@@ -11,7 +11,10 @@
 <script>
   import Header from '@/components/Header.vue'
   export default {
-    name: 'workspace'
+    name: 'workspace',
+    components: {
+      'c-header' : Header
+    }
   }
 </script>
 
