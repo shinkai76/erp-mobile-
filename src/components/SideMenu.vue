@@ -29,7 +29,8 @@
         setOfBook: "",
         items: [
           {
-            text: '我的C8'
+            text: '我的C8',
+            name: 'dashboard'
           },
           {
             text: '工作台',
@@ -38,7 +39,8 @@
           }, {
             text: '管理工作台',
             lcode: 'other/workspaces',
-            className: 'side-menu-menu_default'
+            className: 'side-menu-menu_default',
+            name: 'adminworkspace'
           }, {
             text: '销售单据',
             childList: [
@@ -77,6 +79,7 @@
     },
     methods: {
       toViews (item) {
+        this.$store.dispatch("CloseSideMenu")
         this.$router.push(item.name)
       },
       hidePanel(event){
