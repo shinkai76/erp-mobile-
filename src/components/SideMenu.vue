@@ -14,11 +14,13 @@
           </li>
         </ul>
       </div>
+      <button type="button" @click="layout">登出</button>
     </div>
   </div>
 </template>
 
 <script>
+  import { removeToken } from '@/utils/auth'
   export default {
     name: 'SideMenu',
     data () {
@@ -84,6 +86,11 @@
             this.$store.dispatch("CloseSideMenu")
           }
         }
+      },
+      layout() {
+        removeToken()
+        this.$store.dispatch("CloseSideMenu")
+        this.$router.replace('login')
       }
     }
   }
@@ -96,6 +103,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    z-index: 5000;
     .side-menu {
       &-wrap {
         width: 70%;
