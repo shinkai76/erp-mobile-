@@ -61,10 +61,15 @@
         margin:0.2rem 0;
       }
     }
+    #infos{
+      margin-top: 0.8rem;
+    }
     .infos {
       &-wrap{
         height: 0.66rem;
         line-height: 0.66rem;
+        margin-top: 0.8rem;
+        width: 100%;
       }
       &-ico{
         position: absolute;

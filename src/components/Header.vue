@@ -32,6 +32,7 @@
 
 <style scoped lang="less">
   .header-wrap {
+    position: fixed;
     height: 0.8rem;
     width: 100%;
     top: 0;
@@ -39,7 +40,7 @@
     background-color: #fff;
     font-size: 0.4rem;
     text-align: center;
-
+    border-bottom: 1px solid #ccc;
     .header-text {
       text-align: center;
     }

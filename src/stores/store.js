@@ -17,6 +17,8 @@ const store = new Vuex.Store({
   state: {
     userName: "",
     setOfBook: "",
+    token: "",
+    isFilter: false,
     sidemenu: {
       opened: !+Cookies.get('sidemenuStatus')
     },
@@ -33,6 +35,9 @@ const store = new Vuex.Store({
     CLOSE_SIDEMENU: state => {
       Cookies.set('sidemenuStatus', 1)
       state.sidemenu.opened = false
+    },
+    TOGGLE_FILTER: state => {
+      state.isFilter = !state.isFilter
     }
   },
   actions: {

@@ -36,7 +36,7 @@
           method: 'POST',
           params: this.loginForm
         }).then(res => {
-          setToken(res.data.token)
+          setToken(res.token)
           this.$store.state.userName = this.loginForm.user_name
           this.$store.state.setOfBook = this.loginForm.set_of_book
           this.$router.replace('/dashboard')
