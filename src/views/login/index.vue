@@ -24,9 +24,9 @@
       }
     },
     // created() {}, // 获取数据
-    mounted () {
+    mounted () { // 请求数据之后的页面其他逻辑
       removeToken()
-    }, // 请求数据之后的页面其他逻辑,
+    },
     activated () {},
     deactivated () {},
     methods: {

@@ -31,12 +31,14 @@
 </script>
 
 <style scoped lang="less">
+  @height: 0.8rem;
+  @padding: 0.3rem;
   .header-wrap {
     position: fixed;
-    height: 0.8rem;
+    height: @height;
     width: 100%;
     top: 0;
-    line-height: 0.8rem;;
+    line-height: @height;
     background-color: #fff;
     font-size: 0.4rem;
     text-align: center;
@@ -46,15 +48,15 @@
     }
 
     .header-ico {
-      line-height: 0.8rem;;
+      line-height: @height;;
       position: absolute;
 
       &_left {
-        left: .3rem;
+        left: @padding;
       }
 
       &_right {
-        right: .3rem;
+        right: @padding;
       }
     }
   }
