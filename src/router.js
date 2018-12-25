@@ -17,7 +17,13 @@ export default new Router({
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: () => import(/* webpackChunkName: "about" */ 'views/dashboard/index.vue')
+      component: () => import(/* webpackChunkName: "about" */ 'views/dashboard/index.vue'),
+      children: [
+        {
+          path: 'msg',
+          name: 'msg',
+          component: Msg
+        }]
     },
     {
       path: '/workspace',

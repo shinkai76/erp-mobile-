@@ -3,7 +3,7 @@
     <div id="Header" class="header-wrap">
       <i class="fa fa-angle-left header-ico header-ico_left" aria-hidden="true" @click="onOpenSideMenu()"></i>
       C8ERP
-      <i class="fa fa-bars header-ico header-ico_right" aria-hidden="true"></i>
+      <i class="fa fa-bars header-ico header-ico_right" aria-hidden="true" @click="onOpenMsg()"></i>
     </div>
     <c-sidemenu v-show="sidemenu.opened"></c-sidemenu>
   </div>
@@ -14,13 +14,16 @@
 
   export default {
     name: 'Header',
+    components: {
+      'c-sidemenu': SideMenu
+    },
     methods: {
       onOpenSideMenu () {
         this.$store.dispatch('ToggleSideMenu')
+      },
+      onOpenMsg() {
+        this.$router.push('msg')
       }
-    },
-    components: {
-      'c-sidemenu': SideMenu
     },
     computed: {
       sidemenu () {
