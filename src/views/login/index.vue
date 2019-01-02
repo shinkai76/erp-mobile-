@@ -31,6 +31,10 @@
     deactivated () {},
     methods: {
       async onLogin () {
+        this.$toast.loading({
+          mask: true,
+          message: '正在加载...'
+        });
         const _LoginInfo = await this.$axios({
           url: '/api/login',
           method: 'POST',

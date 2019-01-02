@@ -12,23 +12,23 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: () => import(/* webpackChunkName: "about" */ 'views/login/index.vue')
+      component: () => import('views/login/index.vue')
     },
     {
       path: '/dashboard',
       name: 'dashboard',
-      component: () => import(/* webpackChunkName: "about" */ 'views/dashboard/index.vue'),
+      component: () => import('views/dashboard/index.vue'),
       children: [
         {
           path: 'msg',
           name: 'msg',
-          component: Msg
+          component:() => import('views/dashboard/Msg.vue')
         }]
     },
     {
       path: '/workspace',
       name: 'workspace',
-      component: () => import(/* webpackChunkName: "about" */ 'views/workspace/index.vue')
+      component: () => import('views/workspace/index.vue')
     },
     {
       path: '/about',

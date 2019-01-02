@@ -5,24 +5,24 @@
       <button type="button" @click="onOpenFilter()"><i class="fa fa-filter" aria-hidden="true"></i>过滤</button>
       <span class="top-bar-record">共{{ totalRecord }}条记录</span>
     </div>
-    <ul class="bills-wrap">
-      <li v-for="(value, index) in billInfo" class="bills-item">
-        <div class="container-first">
-          <div class="container-first-status">{{ value.state }}</div>
-        </div>
-        <div class="container-second">
-          <div class="container-second-info">
-            <span>商业伙伴{{ value.form_partner_id }}</span>
-            <span>单号{{ value.form_code }}</span>
-            <span>金额{{ value.form_total_amount }}</span>
+      <ul class="bills-wrap">
+        <li v-for="(value, index) in billInfo" class="bills-item">
+          <div class="container-first">
+            <div class="container-first-status">{{ value.state }}</div>
           </div>
-        </div>
-        <div class="container-third">
-          <div class="container-third-arrow" @click="onOpenBill()"><i class="fa fa-angle-right" aria-hidden="true"></i>
+          <div class="container-second">
+            <div class="container-second-info">
+              <span>商业伙伴{{ value.form_partner_id }}</span>
+              <span>单号{{ value.form_code }}</span>
+              <span>金额{{ value.form_total_amount }}</span>
+            </div>
           </div>
-        </div>
-      </li>
-    </ul>
+          <div class="container-third">
+            <div class="container-third-arrow" @click="onOpenBill()"><i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+          </div>
+        </li>
+      </ul>
     <c-filter :filter-items="filterItems"></c-filter>
   </div>
 </template>

@@ -4,7 +4,7 @@
     <div id="infos" class="infos-wrap">
       <i class="fa fa-bell-o infos-ico infos-ico_left" aria-hidden="true"></i>
       <span class="infos-title">消息通知</span>
-      <i class="fa fa-angle-right infos-ico infos-ico_right" aria-hidden="true"></i>
+      <i class="fa fa-angle-right infos-ico infos-ico_right" aria-hidden="true" @click="onOpenMsg"></i>
     </div>
     <div class="sections-wrap">
       <section id="bills">
@@ -47,6 +47,11 @@
     components: {
       'c-header': Header,
       'c-icoslot': IcoSlot
+    },
+    methods: {
+      onOpenMsg () {
+        this.$router.push('msg')
+      }
     }
   }
 </script>
@@ -61,6 +66,7 @@
       background: transparent;
       margin: 0.2rem;
     }
+
     .infos {
       &-wrap {
         background: #fff;

@@ -1,6 +1,6 @@
 <template>
     <div id="Msg">
-      
+      这里是消息
     </div>
 </template>
 
